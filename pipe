@@ -1,0 +1,13 @@
+pipeline{
+    agent any
+    
+    environment{
+        ONE='one'
+    }
+    
+    stages{
+        stage('user_name'){
+            steps{
+               sh echo 'Hello $0'
+          }
+}
