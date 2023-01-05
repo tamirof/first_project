@@ -9,6 +9,8 @@ pipeline{
         stage('user_name'){
             steps{
                 echo "hello"
-               sh echo 'Hello $0'
-          }
+                }
+        }
+    }
 }
+
