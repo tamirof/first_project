@@ -1,32 +1,36 @@
 pipeline{
     agent any
-    
-    environment{
-        ONE='one'
-    }
-    
+    parameters {
+	choice(name: 'select_language', choices:['ALL', 'JAVA', 'C', 'PYTHON'])
+	}
+
     stages{
-        stage('clone'){
-            steps{
-                sh  ' pwd '
-                echo "STEP1"
-            }
+        stage('runing program'){
+            steps {
+		    ALL = '/var/lib/jenkins/workspace/pip1/ALL.sh'
+	    	JAVA = '/var/lib/jenkins/workspace/pip1/JAVA.sh'
+	    	C = '/var/lib/jenkins/workspace/pip1/C.sh'
+	    	PYTHON = '/var/lib/jenkins/workspace/pip1/PYTHO.sh'
+	    	if (param.select_language == "ALL"){
+		    sh ' $ALL '
+		   	}
+		    if (param.select_language == "JAV"){
+		  	sh ' $JAVA '
+		   	}
+		    if (param.select_language == "C"){
+		  	sh ' $C '
+		   	}
+		    if (param.select_language == "PYTHON"){
+		    sh ' $PYTHON '
+		    }
         }
-        stage('test'){
+    }
+        stage('echo'){
             steps{
                 sh '''
                     hostname
                     echo "STEP2"
-                    echo " Build number is : ${BUILD_NUMBER}"
-                '''
-            }
-        }
-        stage('build'){
-            steps{
-                sh '''
-                    hostname
-                    echo "STEP2"
-                    echo "ONE = $ONE"
+                    pwd
                 '''
             }
         }
