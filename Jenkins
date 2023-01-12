@@ -11,17 +11,17 @@ pipeline{
 	    	JAVA = '/var/lib/jenkins/workspace/pip1/JAVA.sh'
 	    	C = '/var/lib/jenkins/workspace/pip1/C.sh'
 	    	PYTHON = '/var/lib/jenkins/workspace/pip1/PYTHO.sh'
-	    	if (param.select_language == "ALL"){
+	    	    if (param.select_language == "ALL"){
 		    	sh $ALL
 		    	}
-		    if (param.select_language == "JAVA"){
-		    	sh $JAVA
+		        if (param.select_language == "JAVA"){
+		        	sh $JAVA
 		    	}
-		    if (param.select_language == "C"){
-		    	sh $C
+		        if (param.select_language == "C"){
+		         	sh $C
 		    	}
-		    if (param.select_language == "PYTHON"){
-			    sh $PYTHON
+		       if (param.select_language == "PYTHON"){
+		    	    sh $PYTHON
 		    	}
               }
         }
