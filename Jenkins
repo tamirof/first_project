@@ -14,13 +14,13 @@ pipeline{
 		if (param.select_language == "ALL"){
 			sh $ALL
 			}
-		else (param.select_language == "JAVA"){
+		if (param.select_language == "JAVA"){
 			sh $JAVA
 			}
-		else (param.select_language == "C"){
+		if (param.select_language == "C"){
 			sh $C
 			}
-		else (param.select_language == "PYTHON"){
+		if (param.select_language == "PYTHON"){
 			sh $PYTHON
 			}
               }
