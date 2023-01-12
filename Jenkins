@@ -7,10 +7,10 @@ pipeline{
     stages{
         stage('runing program'){
             steps {
-		ALL = "./ALL.sh"
-		JAVA = "./JAVA.sh"
-		C = "./C.sh"
-		PYTHON = "./PYTHON"
+		ALL = "/var/lib/jenkins/workspace/pip1/ALL.sh"
+		JAVA = "/var/lib/jenkins/workspace/pip1/JAVA.sh"
+		C = "/var/lib/jenkins/workspace/pip1/C.sh"
+		PYTHON = "/var/lib/jenkins/workspace/pip1/PYTHON.sh"
 		if (param.select_language == "ALL"){
 			sh $ALL
 			}
