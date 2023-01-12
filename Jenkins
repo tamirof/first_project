@@ -1,0 +1,38 @@
+pipeline{
+    agent any
+    parameters {
+	choice(name: 'select_language', choices:['ALL', 'JAVA', 'C', 'PYTHON'])
+	}
+
+    stages{
+        stage('runing program'){
+            steps {
+		ALL = "./ALL.sh"
+		JAVA = "./JAVA.sh"
+		C = "./C.sh"
+		PYTHON = "./PYTHON"
+		if (param.select_language == "ALL"){
+			sh $ALL
+			}
+		else (param.select_language == "JAVA"){
+			sh $JAVA
+			}
+		else (param.select_language == "C"){
+			sh $C
+			}
+		else (param.select_language == "PYTHON"){
+			sh $PYTHON
+			}
+              }
+        }
+        stage('echo'){
+            steps{
+                sh '''
+                    hostname
+                    echo "STEP2"
+                    pwd
+                '''
+            }
+        }
+    }
+}
