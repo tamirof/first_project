@@ -1,1 +1,1 @@
-echo "it is Bash"
+echo "it is C"
