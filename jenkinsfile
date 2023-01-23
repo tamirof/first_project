@@ -7,6 +7,7 @@ pipeline {
         stage('build') {
             steps {
                 sh '''
+                ./jenkins.sh
                 echo "$language"
                 echo "hello world"
                 ls -la
