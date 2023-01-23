@@ -6,11 +6,11 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh '''
+                sh """
                 echo "your language choice is ${params.language}"
-                chmod +x "${params.language}.sh"
-                '''
-                sh "./${params.language}.sh"
+                chmod +x ${params.language}.sh
+                ./${params.language}.sh
+                """
             } 
         }
     }
