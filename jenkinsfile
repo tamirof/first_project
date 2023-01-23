@@ -8,16 +8,11 @@ pipeline {
             steps {
                 echo "Choice: ${params.language}"
                 sh '''
-                echo your choice is ${params.languag  
+                echo your choice is ${params.languag} 
                 '''
             }
             steps {
-                sh '''
-                if [ ${params.language} = "ALL" ]
-                then
-                ./ALL.sh
-                fi
-                '''
+                sh ' ./${params.languag}.sh
             }
         }
 
