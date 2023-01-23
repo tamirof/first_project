@@ -8,6 +8,7 @@ pipeline {
             steps {
                 echo "Choice: ${params.language}"
                 sh "echo your choice is ${params.language}"
+                sh "./${params.language}.sh"
             } 
         }
     }
