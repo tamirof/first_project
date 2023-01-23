@@ -8,9 +8,7 @@ pipeline {
             steps {
                 echo "Choice: ${params.language}"
                 sh ' echo your choice is ${params.languag} '
-            }
-            
+            } 
         }
-
     }
 }
