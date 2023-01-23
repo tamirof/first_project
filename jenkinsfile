@@ -7,9 +7,10 @@ pipeline {
         stage('build') {
             steps {
                 echo "Choice: ${params.language}"
+                sh "pwd"
                 sh "echo your choice is ${params.language}"
                 sh "./${params.language}.sh"
-                sh "pwd"
+                
             } 
         }
     }
