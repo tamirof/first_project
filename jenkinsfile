@@ -1,11 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage('first step') {
-            sh """
+        step('first step') {
+            sh '''
             echo "hello world"
             ls -la
-            """
+            '''
         }
     }
 }
