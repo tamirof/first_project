@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo "Choice: ${params.CHOICE}"
+                echo "Choice: ${params.language}"
                 sh 'echo $language'
             }
         }
