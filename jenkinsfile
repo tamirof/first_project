@@ -6,12 +6,11 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo "Choice: ${params.language}"
-                sh "ls -la"
-                sh "echo your choice is ${params.language}"
-                sh "chmod +x ${params.language}.sh"
-                sh "/var/lib/jenkins/workspace/pip1/${params.language}.sh"
-                
+                sh '''
+                "echo your language choice is ${params.language}"
+                "chmod +x ${params.language}.sh"
+                "/var/lib/jenkins/workspace/pip1/${params.language}.sh"
+                '''
             } 
         }
     }
