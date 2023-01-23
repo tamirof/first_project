@@ -1,9 +1,13 @@
 pipeline {
     agent any
+    parameters {
+        choice(name: 'language', language: ['ALL', 'C', 'JAVA','PYTHON'], description: 'language choice')
+    }
     stages {
         stage('build') {
             steps {
                 sh '''
+                echo $language
                 echo "hello world"
                 ls -la
                 '''
