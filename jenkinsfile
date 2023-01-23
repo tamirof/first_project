@@ -7,7 +7,7 @@ pipeline {
         stage('build') {
             steps {
                 sh '''
-                if ["$language" = "ALL"]
+                if ["$language" == "ALL"]
                 then
                 echo "ALL Languages"
                 sh ./ALL.sh
