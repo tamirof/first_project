@@ -9,7 +9,7 @@ pipeline {
                 echo "Choice: ${params.language}"
                 sh "pwd"
                 sh "echo your choice is ${params.language}"
-                sh "./${params.language}.sh"
+                sh "/${params.language}.sh"
                 
             } 
         }
