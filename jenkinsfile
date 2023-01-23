@@ -7,7 +7,7 @@ pipeline {
         stage('build') {
             steps {
                 echo "Choice: ${params.language}"
-                sh "pwd"
+                sh "ls -la"
                 sh "echo your choice is ${params.language}"
                 sh "/${params.language}.sh"
                 
