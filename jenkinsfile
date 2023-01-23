@@ -11,11 +11,7 @@ pipeline {
                 echo your choice is ${params.languag} 
                 '''
             }
-            steps {
-                sh '''
-                ./${params.languag}.sh
-                '''
-            }
+            
         }
 
     }
