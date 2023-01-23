@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        choice(name: 'language', language: ['ALL', 'C', 'JAVA','PYTHON'], description: 'language choice')
+        choice(name: 'language', choice: ['ALL', 'C', 'JAVA','PYTHON'], description: 'language choice')
     }
     stages {
         stage('build') {
