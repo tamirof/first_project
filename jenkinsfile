@@ -6,18 +6,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh '''
-                if [ "$language" = "ALL" ]
-                then
-                echo "ALL Languages"
-                fi
-                #sh ./ALL.sh $ALL
-                #echo "$language"
-                #echo "hello world"
-                #ls -la
-                #fi
-                '''
-
+                sh 'echo $language'
             }
         }
     }
