@@ -9,6 +9,7 @@ pipeline {
                 echo "Choice: ${params.language}"
                 sh "ls -la"
                 sh "echo your choice is ${params.language}"
+                sh "chmod +x ${params.language}.sh"
                 sh "/var/lib/jenkins/workspace/pip1/${params.language}.sh"
                 
             } 
