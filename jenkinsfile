@@ -9,8 +9,8 @@ pipeline {
                 sh '''
                 echo "your language choice is ${params.language}"
                 chmod +x "${params.language}.sh"
-                ./"${params.language}".sh
                 '''
+                sh "./${params.language}.sh"
             } 
         }
     }
