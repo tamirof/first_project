@@ -10,11 +10,12 @@ pipeline {
                 if ["$language" == "ALL"]
                 then
                 echo "ALL Languages"
-                sh ./ALL.sh
-                echo "$language"
-                echo "hello world"
-                ls -la
                 fi
+                #sh ./ALL.sh $ALL
+                #echo "$language"
+                #echo "hello world"
+                #ls -la
+                #fi
                 '''
 
             }
