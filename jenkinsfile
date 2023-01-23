@@ -12,7 +12,9 @@ pipeline {
                 '''
             }
             steps {
-                sh ' ./${params.languag}.sh '
+                sh '''
+                ./${params.languag}.sh
+                '''
             }
         }
 
