@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    parameters {
+        choice(name: 'language', choices: ['ALL', 'C', 'JAVA','PYTHON'], description: 'language choice')
+    }
+    stages {
+        stage('build') {
+            steps {
+                sh """
+                echo "your language choice is ${params.language}"
+                cd Docker
+                ls -la
+                """
+            } 
+        }
+        stage('Docker build'){
+            echo "building container"
+            steps {
+                sh '''
+                touch Dockerfile
+                echo FROM nginx:alpine
+                    COPY ./${params.language}.html /usr/share/nginx/html >> Dockerfile
+                cat Dockerfile
+                
+
+                '''
+            }
+    }
+}
