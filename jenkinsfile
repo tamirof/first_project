@@ -19,8 +19,7 @@ pipeline {
                 sh '''
                 cd Docker
                 ls -la
-                touch Dockerfile
-                echo "FROM nginx:alpine\nCOPY ./${params.language}.html /usr/share/nginx/html" >> Dockerfile
+                sh echo "FROM nginx:alpine\nCOPY ./${params.language}.html /usr/share/nginx/html" > Dockerfile
                 cat Dockerfile
                 
 
