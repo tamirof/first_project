@@ -14,9 +14,8 @@ pipeline {
         stage('Docker build') {
             steps {
                 echo "building container"
-                
-                sh 'cd Docker'
                 sh '''
+                cd Docker
                 ls -la
                 echo "FROM nginx:alpine\nCOPY ./${params.language}.html /usr/share/nginx/html" > Dockerfile
                 cat Dockerfile
