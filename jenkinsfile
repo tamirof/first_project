@@ -18,7 +18,7 @@ pipeline {
                 cd Docker
                 ls -la
                 '''
-                sh 'echo FROM nginx:alpine; echo COPY ./${params.language}.html /usr/share/nginx/html' > Dockerfile'
+                sh 'printf "FROM nginx:alpine\nCOPY ./${params.language}.html /usr/share/nginx/html" > Dockerfile'
                 sh 'cat Dockerfile'
             }
         }
