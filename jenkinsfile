@@ -13,9 +13,9 @@ pipeline {
                 """
             } 
         }
-        stage('Docker build'){
-            echo "building container"
+        stage('Docker build') {
             steps {
+                echo "building container"
                 sh '''
                 touch Dockerfile
                 echo FROM nginx:alpine
