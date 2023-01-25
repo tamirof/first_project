@@ -23,6 +23,7 @@ pipeline {
                 echo "FROM nginx:alpine" > Dockerfile
                 echo 'COPY ./${params.language}.html /usr/share/nginx/html' >> Dockerfile
                 cat Dockerfile
+                docker build -t html:v1
                 pwd
                 '''
             }
