@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    parameters {
+        choice(name: 'language', choices: ['ALL', 'C', 'JAVA','PYTHON'], description: 'language choice')
+    }
+    stages {
+        stage('build') {
+            steps {
+                sh """
+                echo "your language choice is ${params.language}"
+                ls -la
+                chmod +x ${params.language}.sh
+                ./${params.language}.sh
+                """
+            } 
+        }
+    }
+}
