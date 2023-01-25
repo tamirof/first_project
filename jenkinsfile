@@ -8,18 +8,17 @@ pipeline {
             steps {
                 sh """
                 echo "your language choice is ${params.language}"
-                cd Docker
-                ls -la
                 """
             } 
         }
         stage('Docker build') {
             steps {
                 echo "building container"
+                
+                sh 'cd Docker'
                 sh '''
-                cd Docker
                 ls -la
-                sh echo "FROM nginx:alpine\nCOPY ./${params.language}.html /usr/share/nginx/html" > Dockerfile
+                echo "FROM nginx:alpine\nCOPY ./${params.language}.html /usr/share/nginx/html" > Dockerfile
                 cat Dockerfile
                 
 
