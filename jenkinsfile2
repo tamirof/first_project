@@ -8,6 +8,7 @@ pipeline {
             steps {
                 sh """
                 cd Docker
+                chmod 666 /var/run/docker.sock
                 ls -la
                 echo "your language choice is ${params.language}"
                 chmod +x ${params.language}.sh
