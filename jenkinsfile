@@ -15,10 +15,10 @@ pipeline {
             steps {
                 echo "building container"
                 sh """
-                cd Docker
+                cd /Docker
                 ls -la
                 #echo "${params.language}"
-                rm Dockerfile
+                #rm Dockerfile
                 echo "FROM nginx:alpine" > Dockerfile
                 echo 'COPY ./${params.language}.html /usr/share/nginx/html' >> Dockerfile
                 cat Dockerfile
