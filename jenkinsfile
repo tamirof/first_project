@@ -16,7 +16,7 @@ pipeline {
                 sh """
                 echo '<!DOCTYPE html>\n<html>\n\t<body>\n\t\t<h1>${params.language} Languages Language</h1>\n\t\t<p>You have Selected ${params.language} Languages, python, java, c</p>\n\t</body>\n</html>' > Docker/index.html
                 pwd
-                ls -la /Docker/
+                ls -la Docker/
                 """
             }
         }
