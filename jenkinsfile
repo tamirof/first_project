@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo "building container"
                 sh """
-                cd /Docker
+                #cd /Docker
                 ls -la
                 #echo "${params.language}"
                 #rm Dockerfile
