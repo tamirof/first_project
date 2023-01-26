@@ -6,19 +6,18 @@ pipeline {
     stages {
         stage('language Selection') {
             steps {
-                sh echo "your language choice is ${params.language}"
+                sh '''
+                echo "your language choice is ${params.language}"
+                '''
             } 
         }
         stage('Docker build') {
             steps {
-                echo "building container"
                 sh """
                 cd Docker
                 echo "FROM nginx" > Dockerfile
                 echo 'COPY ${params.language}.html /usr/share/nginx/html/index.html' >> Dockerfile
-                cat Dockerfile
                 docker build -t hello:v1 .
-                pwd
                 """
             }
         }
