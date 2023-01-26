@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('language Selection') {
             steps {
-                sh 'echo "your language choice is ${params.language}"'
+                sh echo "your language choice is ${params.language}"
             } 
         }
         stage('Docker build') {
