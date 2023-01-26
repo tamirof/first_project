@@ -4,11 +4,9 @@ pipeline {
         choice(name: 'language', choices: ['ALL', 'C', 'JAVA','PYTHON'], description: 'language choice')
     }
     stages {
-        stage('build') {
+        stage('language Selection') {
             steps {
-                sh """
-                echo "your language choice is ${params.language}"
-                """
+                sh 'echo "your language choice is ${params.language}"'
             } 
         }
         stage('Docker build') {
