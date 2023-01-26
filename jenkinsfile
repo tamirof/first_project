@@ -16,7 +16,6 @@ pipeline {
                 echo "building container"
                 sh """
                 cd Docker
-                usermod -a -G docker jenkins
                 ls -la
                 #echo "${params.language}"
                 rm Dockerfile
