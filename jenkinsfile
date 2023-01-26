@@ -16,6 +16,7 @@ pipeline {
                 echo "building container"
                 sh """
                 cd Docker
+                chmod 666 /var/run/docker.sock
                 ls -la
                 #echo "${params.language}"
                 rm Dockerfile
