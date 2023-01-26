@@ -20,15 +20,15 @@ pipeline {
                 """
             }
         }
-        stage('Docker build') {
-            steps {
-                sh """
-                cd Docker
-                echo "FROM nginx" > Dockerfile
-                echo 'COPY ${params.language}.html /usr/share/nginx/html/index.html' >> Dockerfile
-                docker build -t hello:v1 .
-                """
-            }
-        }
+        #stage('Docker build') {
+         #   steps {
+          #      sh """
+           #     cd Docker
+            #    echo "FROM nginx" > Dockerfile
+             #   echo 'COPY ${params.language}.html /usr/share/nginx/html/index.html' >> Dockerfile
+              #  docker build -t hello:v1 .
+               # """
+        #    }
+       # }
     }
 }
