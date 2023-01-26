@@ -7,7 +7,7 @@ pipeline {
         stage('language Selection') {
             steps {
                 sh '''
-                echo 'your language choice is ${params.language}'
+                echo "your language choice is ${params.language}"
                 '''
             } 
         }
