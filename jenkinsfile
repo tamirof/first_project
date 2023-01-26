@@ -14,10 +14,19 @@ pipeline {
         stage('Creat Html File') {
             steps {
                 sh """
-                echo '<!DOCTYPE html>\n<html>\n\t<body>\n\t\t<h1>${params.language} Language</h1>\n\t\t<p>You have Selected ${params.language} Languages, python, java, c</p>\n\t</body>\n</html>' > index.html
-                cat index.html
+                echo '<!DOCTYPE html>\n<html>\n\t<body>\n\t\t<h1>${params.language} Languages Language</h1>\n\t\t<p>You have Selected ${params.language} Languages, python, java, c</p>\n\t</body>\n</html>' > Docker/index.html
                 pwd
                 ls -la
+                """
+            }
+        }
+        stage('Docker build') {
+            steps {
+                sh """
+                cd Docker
+                echo "FROM nginx" > Dockerfile
+                echo 'COPY ${params.language}.html /usr/share/nginx/html/index.html' >> Dockerfile
+                docker build -t hello:v1 .
                 """
             }
         }
