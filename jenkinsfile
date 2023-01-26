@@ -14,7 +14,7 @@ pipeline {
         stage('Docker build') {
             steps {
                 echo "building container"
-                sh '''
+                sh """
                 cd Docker
                 ls -la
                 echo "${params.language}"
@@ -24,7 +24,7 @@ pipeline {
                 cat Dockerfile
                 docker build -t hello:v1 .
                 pwd
-                '''
+                """
             }
         }
     }
